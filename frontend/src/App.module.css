@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+body {
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8)),
+    url(/src/assets/images/FONDG.jpg);
+  background-size: 1922px 1178px;
+  background-repeat: no-repeat;
+  background-position-y: -12vh;
+  overflow: hidden;
+}
