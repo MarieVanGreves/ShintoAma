@@ -3,7 +3,7 @@
 .bioContainer {
   width: 41vh;
   height: 34vh;
-  border-radius: 10%;
+  border-radius: 40px;
   opacity: 82%;
   display: flex;
   background-color: #242526;

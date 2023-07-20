@@ -25,7 +25,7 @@ function NavBar() {
               isActive ? styles.menuActive : styles.navbarLink
             }
           >
-            Acceuil
+            Accueil
             <div className={styles.underline} />
           </NavLink>
         </li>
@@ -36,7 +36,7 @@ function NavBar() {
               isActive ? styles.menuActive : styles.navbarLink
             }
           >
-            Temples
+            Temples sacrés
             <div className={styles.underline} />
           </NavLink>
         </li>

@@ -18,7 +18,7 @@ export default function Bio() {
         Passionnée de culture japonaise depuis mon enfance, j'ai découvert ce
         pays magnifique au travers de ses temples et de son plus beau trésor, le
         Shintoïsme. Croyant ou pas, tout le monde à quelque chose à apprendre du
-        Shinto. J'ai dédiée ma vie à ma déesse, Amaterasu.
+        Shinto. J'ai choisi de dédier ma vie à ma déesse, Amaterasu.
       </p>
     </div>
   );
