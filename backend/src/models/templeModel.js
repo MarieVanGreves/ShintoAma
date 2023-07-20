@@ -41,13 +41,14 @@ const createTemple = (
   description,
   dateFondation,
   adresse,
+  imageUrl,
   callback
 ) => {
   const sql =
-    "INSERT INTO Temples (Nom, Ville, Préfecture, Description, DateFondation, Adresse) VALUES (?, ?, ?, ?, ?, ?)";
+    "INSERT INTO Temples (Nom, Ville, Préfecture, Description, DateFondation, Adresse, imageUrl) VALUES (?, ?, ?, ?, ?, ?, ?)";
   connection.query(
     sql,
-    [nom, ville, prefecture, description, dateFondation, adresse],
+    [nom, ville, prefecture, description, dateFondation, adresse, imageUrl],
     (err, result) => {
       if (err) {
         callback(err, result);

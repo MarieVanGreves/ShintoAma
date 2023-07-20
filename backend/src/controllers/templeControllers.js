@@ -32,8 +32,15 @@ const getTempleById = (req, res) => {
 };
 
 const createTemple = (req, res) => {
-  const { nom, ville, prefecture, description, dateFondation, adresse } =
-    req.body;
+  const {
+    nom,
+    ville,
+    prefecture,
+    description,
+    dateFondation,
+    adresse,
+    imageUrl,
+  } = req.body;
   Temple.createTemple(
     nom,
     ville,
@@ -41,6 +48,7 @@ const createTemple = (req, res) => {
     description,
     dateFondation,
     adresse,
+    imageUrl,
     (err, newTempleId) => {
       if (err) {
         console.error("Erreur lors de la création du temple : ", err);
@@ -56,8 +64,15 @@ const createTemple = (req, res) => {
 
 const updateTemple = (req, res) => {
   const templeId = req.params.id;
-  const { nom, ville, prefecture, description, dateFondation, adresse } =
-    req.body;
+  const {
+    nom,
+    ville,
+    prefecture,
+    description,
+    dateFondation,
+    adresse,
+    imageUrl,
+  } = req.body;
   Temple.updateTemple(
     templeId,
     nom,
@@ -66,6 +81,7 @@ const updateTemple = (req, res) => {
     description,
     dateFondation,
     adresse,
+    imageUrl,
     (err) => {
       if (err) {
         console.error("Erreur lors de la mise à jour du temple : ", err);
