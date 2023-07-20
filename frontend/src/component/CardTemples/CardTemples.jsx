@@ -6,7 +6,7 @@ function CardTemples() {
 
   const fetchTemples = async () => {
     try {
-      const response = await fetch("/api/temples");
+      const response = await fetch("/temples");
       const data = await response.json();
       setTemples(data);
     } catch (error) {

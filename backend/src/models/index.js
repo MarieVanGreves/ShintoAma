@@ -34,14 +34,14 @@ const ItemManager = require("./ItemManager");
 models.item = new ItemManager();
 models.item.setDatabase(pool);
 
-const DiviniteModel = require("./DiviniteModel");
+const DiviniteManager = require("./DiviniteManager");
 
-models.divinite = new DiviniteModel();
+models.divinite = new DiviniteManager();
 models.divinite.setDatabase(pool);
 
-const TempleModel = require("./TempleModel");
+const TempleManager = require("./TempleManager");
 
-models.temple = new TempleModel();
+models.temple = new TempleManager();
 models.temple.setDatabase(pool);
 
 // bonus: use a proxy to personalize error message,

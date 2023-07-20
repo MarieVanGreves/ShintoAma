@@ -1,77 +1,92 @@
-const Divinite = require("../models/DiviniteModel");
+const models = require("../models");
 
 const getAllDivinites = (req, res) => {
-  Divinite.getAllDivinites((err, divinites) => {
-    if (err) {
-      console.error("Erreur lors de la récupération des divinités : ", err);
+  models.divinite
+    .findAll()
+    .then((divinites) => {
+      res.json(divinites);
+    })
+    .catch((err) => {
+      console.error("Erreur lors de la récupération des divinites : ", err);
       res
         .status(500)
-        .json({ error: "Erreur lors de la récupération des divinités." });
-      return;
-    }
-    res.json(divinites);
-  });
+        .json({ error: "Erreur lors de la récupération des divinites." });
+    });
 };
 
 const getDiviniteById = (req, res) => {
   const diviniteId = req.params.id;
-  Divinite.getDiviniteById(diviniteId, (err, divinite) => {
-    if (err) {
-      console.error("Erreur lors de la récupération de la divinité : ", err);
+  models.divinite
+    .find(diviniteId)
+    .then(([divinite]) => {
+      if (divinite == null) {
+        res.status(404).json({ error: "Divinite non trouvée." });
+      } else {
+        res.json(divinite);
+      }
+    })
+    .catch((err) => {
+      console.error("Erreur lors de la récupération de la divinite : ", err);
       res
         .status(500)
-        .json({ error: "Erreur lors de la récupération de la divinité." });
-      return;
-    }
-    if (!divinite) {
-      res.status(404).json({ error: "Divinité non trouvée." });
-      return;
-    }
-    res.json(divinite);
-  });
+        .json({ error: "Erreur lors de la récupération de la divinite." });
+    });
 };
 
 const createDivinite = (req, res) => {
-  const { nom, description } = req.body;
-  Divinite.createDivinite(nom, description, (err, newDiviniteId) => {
-    if (err) {
-      console.error("Erreur lors de la création de la divinité : ", err);
+  const divinite = req.body;
+
+  models.divinite
+    .insert(divinite)
+    .then(([result]) => {
+      res.json({ id: result.insertId });
+    })
+    .catch((err) => {
+      console.error("Erreur lors de la création de la divinite : ", err);
       res
         .status(500)
-        .json({ error: "Erreur lors de la création de la divinité." });
-      return;
-    }
-    res.json({ id: newDiviniteId });
-  });
+        .json({ error: "Erreur lors de la création de la divinite." });
+    });
 };
 
 const updateDivinite = (req, res) => {
-  const diviniteId = req.params.id;
-  const { nom, description } = req.body;
-  Divinite.updateDivinite(diviniteId, nom, description, (err) => {
-    if (err) {
-      console.error("Erreur lors de la mise à jour de la divinité : ", err);
+  const divinite = req.body;
+  divinite.id = parseInt(req.params.id, 10);
+
+  models.divinite
+    .update(divinite)
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.status(404).json({ error: "Divinite non trouvée." });
+      } else {
+        res.json({ message: "Divinite mise à jour avec succès." });
+      }
+    })
+    .catch((err) => {
+      console.error("Erreur lors de la mise à jour de la divinite : ", err);
       res
         .status(500)
-        .json({ error: "Erreur lors de la mise à jour de la divinité." });
-      return;
-    }
-    res.json({ message: "Divinité mise à jour avec succès." });
-  });
+        .json({ error: "Erreur lors de la mise à jour de la divinite." });
+    });
 };
 
 const deleteDivinite = (req, res) => {
   const diviniteId = req.params.id;
-  Divinite.deleteDivinite(diviniteId, (err) => {
-    if (err) {
-      console.error("Erreur lors de la suppression de la divinité : ", err);
+  models.divinite
+    .delete(diviniteId)
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.status(404).json({ error: "Divinite non trouvée." });
+      } else {
+        res.json({ message: "Divinite supprimée avec succès." });
+      }
+    })
+    .catch((err) => {
+      console.error("Erreur lors de la suppression de la divinite : ", err);
       res
         .status(500)
-        .json({ error: "Erreur lors de la suppression de la divinité." });
-      return;
-    }
-    res.json({ message: "Divinité supprimée avec succès." });
-  });
+        .json({ error: "Erreur lors de la suppression de la divinite." });
+    });
 };
 
 module.exports = {
