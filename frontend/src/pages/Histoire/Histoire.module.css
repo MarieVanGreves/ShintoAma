@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100&display=swap");
+
+.histoireContainer {
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deuxCotes {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 5vw;
+  width: 90vw;
+  height: 75vh;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin: 0;
+  margin-top: 17vh;
+}
+
+.leftContainer {
+  width: 70%;
+  display: flex;
+  overflow: auto;
+  border-radius: 40px;
+  opacity: 82%;
+  display: flex;
+  background-color: #242526;
+  flex-direction: column;
+}
+
+.rightContainer {
+  min-width: 30%;
+}
+
+.topContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+
+.image {
+  width: 190px;
+  border-radius: 15%;
+  height: 113%;
+  margin-right: 7px;
+  display: flex;
+  margin-right: 18px;
+}
+
+.titre {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3.5vw;
+  align-items: center;
+  margin-left: 34%;
+}
+
+.containerShinto {
+  width: 95%;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
+  display: flex;
+  margin: 2%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
