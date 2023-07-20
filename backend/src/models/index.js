@@ -34,6 +34,16 @@ const ItemManager = require("./ItemManager");
 models.item = new ItemManager();
 models.item.setDatabase(pool);
 
+const DiviniteManager = require("./DiviniteManager");
+
+models.divinite = new DiviniteManager();
+models.divinite.setDatabase(pool);
+
+const TempleManager = require("./TempleManager");
+
+models.temple = new TempleManager();
+models.temple.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 

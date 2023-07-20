@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100&display=swap");
+
+.cardContainer {
+  width: 100%;
+  background-color: #242526;
+  opacity: 82%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto; /* Ajoutez cette ligne pour activer les barres de défilement */
+  justify-content: center;
+  scrollbar-width: thin;
+  scrollbar-color: #c4c4c4 #242526;
+}
+
+.card {
+  width: 99%;
+  height: 26%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10%;
+  display: flex;
+  margin: 2px;
+  border-radius: 40px;
+  opacity: 82%;
+  display: flex;
+  background-color: #242526;
+}
+
+.templeImage {
+  width: 190px;
+  border-radius: 15%;
+  height: 93%;
+  display: flex;
+  margin-left: 10%;
+  align-content: center;
+  margin-top: 7px;
+}
+
+.containerPhoto {
+  width: 20%;
+}
+
+.templeDetails {
+  margin-left: 8%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #733630;
+  border-radius: 10px;
+  opacity: 80%;
+}
+
+.nom {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5vw;
+  letter-spacing: 4px;
+}
+
+.ville {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5vw;
+  margin-top: 1px;
+  letter-spacing: 6px;
+  margin-top: -17px;
+}
+
+.description {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
+  margin-top: -9px;
+}

@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100&display=swap");
+.containerTitre {
+  margin-left: 10%;
+  padding-top: 8%;
+  color: white;
+  font-family: bebas;
+}
+
+.titreUn {
+  letter-spacing: 10px;
+  font-size: 767%;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.containerPhrase {
+  font-family: "Roboto", sans-serif;
+  margin-left: 10%;
+  color: white;
+  opacity: 80%;
+  line-height: 70%;
+}
+
+.phrase {
+  font-family: "Roboto", sans-serif;
+}
