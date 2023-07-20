@@ -5,11 +5,11 @@ const router = express.Router();
 const templeControllers = require("./controllers/templeControllers");
 const diviniteControllers = require("./controllers/diviniteControllers");
 
-router.get("api/temples", templeControllers.getAllTemples);
-router.get("api/temples/:id", templeControllers.getTempleById);
-router.post("api/temples", templeControllers.createTemple);
-router.put("api/temples/:id", templeControllers.updateTemple);
-router.delete("api/temples/:id", templeControllers.deleteTemple);
+router.get("/temples", templeControllers.getAllTemples);
+router.get("/temples/:id", templeControllers.getTempleById);
+router.post("/temples", templeControllers.createTemple);
+router.put("/temples/:id", templeControllers.updateTemple);
+router.delete("/temples/:id", templeControllers.deleteTemple);
 
 router.get("/divinites", diviniteControllers.getAllDivinites);
 router.get("/divinites/:id", diviniteControllers.getDiviniteById);

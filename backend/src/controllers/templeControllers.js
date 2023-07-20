@@ -1,16 +1,15 @@
-const Temple = require("../models/templeModel");
+const Temple = require("../models/TempleModel");
 
-const getAllTemples = (req, res) => {
-  Temple.getAllTemples((err, temples) => {
-    if (err) {
-      console.error("Erreur lors de la récupération des temples : ", err);
-      res
-        .status(500)
-        .json({ error: "Erreur lors de la récupération des temples." });
-      return;
-    }
+const getAllTemples = async (req, res) => {
+  try {
+    const temples = await Temple.getAllTemples();
     res.json(temples);
-  });
+  } catch (error) {
+    console.error("Erreur lors de la récupération des temples : ", error);
+    res
+      .status(500)
+      .json({ error: "Erreur lors de la récupération des temples." });
+  }
 };
 
 const getTempleById = (req, res) => {

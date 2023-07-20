@@ -1,4 +1,4 @@
-const Divinite = require("../models/diviniteModel");
+const Divinite = require("../models/DiviniteModel");
 
 const getAllDivinites = (req, res) => {
   Divinite.getAllDivinites((err, divinites) => {

@@ -4,7 +4,7 @@ const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
 
 const mysql = require("mysql2/promise");
 
-const connection = mysql.createConnection({
+const database = mysql.createConnection({
   host: DB_HOST,
   port: DB_PORT,
   user: DB_USER,
@@ -12,20 +12,14 @@ const connection = mysql.createConnection({
   database: DB_NAME,
 });
 
-const getAllTemples = (callback) => {
-  const sql = "SELECT * FROM Temples";
-  connection.query(sql, (err, result) => {
-    if (err) {
-      callback(err, result);
-      return;
-    }
-    callback(null, result);
-  });
+const getAllTemples = async () => {
+  const [result] = await database.query("SELECT * FROM Temples");
+  return result;
 };
 
 const getTempleById = (id, callback) => {
   const sql = "SELECT * FROM Temples WHERE Id = ?";
-  connection.query(sql, [id], (err, result) => {
+  database.query(sql, [id], (err, result) => {
     if (err) {
       callback(err, result);
       return;
@@ -46,7 +40,7 @@ const createTemple = (
 ) => {
   const sql =
     "INSERT INTO Temples (Nom, Ville, Préfecture, Description, DateFondation, Adresse, imageUrl) VALUES (?, ?, ?, ?, ?, ?, ?)";
-  connection.query(
+  database.query(
     sql,
     [nom, ville, prefecture, description, dateFondation, adresse, imageUrl],
     (err, result) => {
